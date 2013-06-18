@@ -34,14 +34,16 @@ function curlrequest($url,$data,$method='post'){
 	return $document;
 }
 //$url = 'http://bcs.duapp.com/mybucket?sign=MBO:********************';
-$url = 'http://bcs.duapp.com/mybucket?sign=MBO:********************88888';
+$bucket = 'mysite'; //you bucket name;
+$url = 'http://bcs.duapp.com/$bucket?sign=MBO:********************88888';
+
 $data =  rawurldecode(json_encode(
 				array (
 					'statements' => array (
 						'0' =>  array (
 							'user' => array ('*'), 
 							'effect'=>'allow',
-							'resource' => array ('mybucket\/'), 
+							'resource' => array ($bucket.'/'), 
 							'action' => array ('get_object'), 
 							'referer' => array('http://vip.mydemo.com/*','http://www.mydemo.com/*','http://mydemo.duapp.com//*','http://*.mydemo.duapp.com//*') 
 						) 

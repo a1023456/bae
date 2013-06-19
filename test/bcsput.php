@@ -6,6 +6,10 @@
 </head>
 <body>
 <?php
+/*bae bucket 防盗链测试
+	bae防盗链 目前只支持不通过签名访问的私有文件方式;
+	可以支持防盗链的object 必须满足 私有,且不通过签名访问.
+*/
 /**
  * php curl用例
  * site http://www.jbxue.com
@@ -30,7 +34,6 @@ function curlrequest($url,$data,$method='post'){
 		echo 'Curl error: ' . curl_error($ch); 
 	}
 	curl_close($ch);
-	
 	return $document;
 }
 //$url = 'http://bcs.duapp.com/mybucket?sign=MBO:********************';
